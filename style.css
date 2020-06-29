@@ -1,0 +1,212 @@
+body {
+    display:flex;
+    flex-direction: column;
+    background-color: #FFF;
+    font-family:'Fredoka One', cursive;
+
+}
+
+
+/* CSS DO MENU - PARTE DE CIMA DO HOJE*/
+header{
+    height:200px;
+    display: flex;
+    margin: auto;
+
+}
+.header_left{
+    width:13%;
+}
+.header_right{
+
+    width:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+}
+
+.menu{
+    height: 100px;
+    width: 100%;
+    display: flex;
+}
+.menu_int{
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+.nome{
+    height:25px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.campo_nome{
+    height: 20px;
+    margin-left: 10px;
+    border: 1px solid indigo;
+    border-radius: 3px;
+    background-color:white;
+}
+.legenda_nome{
+    font-size: 20px;
+}
+
+
+.btn_jogar{
+    height: 50px;
+    width: 150px;
+    border-radius: 20px;
+    border: 2px solid chartreuse;
+    font-size: 25px;
+    background-color: indigo;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+
+}
+.btn_jogar:hover {
+    background-color: yellowgreen;
+    border:2px solid indigo;
+    color: indigo;
+}
+
+
+
+.dificuldade{
+    height:25px;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.nivel_dificuldade{
+    height: 22px;
+    width: 100px;
+    margin-left: 10px;
+    border:1px solid indigo;;
+    border-radius: 3px;
+    background-color: white;
+}
+.legenda_dificuldade{
+    font-size: 20px;
+}
+
+
+
+/* CSS DA TABBELA DE RANK*/
+aside{
+    height:150px;
+    width:60%;
+    margin-top: 20px;
+    background-color: indigo;
+    border: 3px solid chartreuse;
+    border-radius: 5px;
+    margin-left: 150px;
+    margin: auto;
+    margin-top: 30px;
+    
+}
+.titulo_rank{
+    width: 100%;
+    height:150px;
+    color:white;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.corpo{
+    display: flex;
+    width:100%;
+}
+
+
+
+
+/* CSS DA MESA DO JOGO - ONDE AS CARTAS ESTAO   */
+table{
+    width: 55%;
+    height: 500px;
+    margin-left:50px;
+    margin-top: 20px;
+    background-color: indigo;
+    padding: 15px;
+    border-radius: 5px;
+    border:5px solid #44D62C;
+    margin: auto;
+    box-shadow: 50px white;
+    
+
+}
+tr{
+    width: 100%;
+}
+table, tr, td{
+    border-spacing: 15px;
+}
+
+.container{
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.card{
+    height:130px;
+    width: 100px;
+    margin: auto;
+    position: relative;
+    perspective: 600px;
+    
+}
+.card:hover{
+    box-shadow: 0 0 10px #aaa;
+}
+.face_back{
+    height:100%;
+    width: 100%;  
+    background-color: chartreuse;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    position: absolute;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: all 1s;
+    backface-visibility: hidden;
+    
+    
+
+}
+.face_front{
+    height:100%;
+    width: 100%;
+    position: absolute; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: white;
+    border: 2px solid chartreuse;
+    border-radius: 5px;
+    transition: all 1s;
+    backface-visibility: hidden;
+
+}
+
+/*Bilioteca*/
+
+.flex_box {
+    display: flex;
+    
+}
+.visivel{
+    visibility: visible;
+
+}
+.invisivel{
+    visibility: hidden;
+    transform: rotateY(180deg);
+
+}

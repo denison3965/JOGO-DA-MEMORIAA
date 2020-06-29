@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da memoria</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header_right">
+                <div><h1 class="titulo_do_jogo">Jogo da memoria</h1></div>
+                <div class="menu">
+                    <form class="flex_box menu_int">
+
+                        <div class="flex_box nome">
+                            <div class="legenda_nome" onclick=" reset()">Nome </div>
+                            <input class="campo_nome" type="text" name="nome" placeholder=" Fernando..." id="nome_id">
+                        </div>
+                    
+                        <div class="btn_jogar" onclick="iniciarJogo()">JOGAR</div> 
+                    
+                        <div class="flex_box dificuldade">
+                            <div class="legenda_dificuldade">Dificuldade </div>
+                            <select name="dificuldade" class="nivel_dificuldade" id="dificuldade_id">
+                                <option value="facil">facil</option>
+                                <option value="medio">medio</option>
+                                <option value="dificil">dificil</option>
+                            </select>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+        <div class="corpo">
+
+            <table id="tabuleiro_do_jogo">
+                
+            </table>
+            
+        </div>
+        <aside>
+            <div class="flex_box">
+                <img src="assets/img/coroa.png" width="50px" height="50px"/>
+                <div class="titulo_rank">
+                    RANKING
+                </div>
+                <img src="assets/img/coroa.png" width="50px" height="50px"/>
+            </div>
+            
+            <di class="corpo">
+                    
+            </div>
+        </aside>
+       
+    </div>
+
+</body>
+</html>
