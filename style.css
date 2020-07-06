@@ -1,7 +1,6 @@
 body {
     display:flex;
     flex-direction: column;
-    background-color: #FFF;
     font-family:'Fredoka One', cursive;
 
 }
@@ -9,7 +8,6 @@ body {
 
 /* CSS DO MENU - PARTE DE CIMA DO HOJE*/
 header{
-    height:200px;
     display: flex;
     margin: auto;
 
@@ -37,6 +35,11 @@ header{
     width: 70%;
     margin: auto;
 }
+.titulo_do_jogo{
+    font-size: 40px;
+    text-shadow: 2px 2px #44D62C;
+    margin-left: 30px;
+}
 .nome{
     height:25px;
     margin-top: 50px;
@@ -54,7 +57,11 @@ header{
     font-size: 20px;
 }
 
-
+.btns{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .btn_jogar{
     height: 50px;
     width: 150px;
@@ -71,6 +78,37 @@ header{
     background-color: yellowgreen;
     border:2px solid indigo;
     color: indigo;
+}
+.btn_reset{
+    height: 25px;
+    width: 25px;
+    background-color: #44D62C;
+    border: 2px solid indigo;
+    line-height: 25px;
+    text-align: center;
+    margin-top:10px;
+    border-radius:15px ;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.btn_reset img {
+    margin-top: 1px;
+}
+.btn_intrucao{
+    height: 25px;
+    width: 25px;
+    background-color: #44D62C;
+    border: 2px solid indigo;
+    line-height: 25px;
+    text-align: center;
+    margin-top:10px;
+    border-radius:15px ;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.btn_intrucao img {
+    margin-top: 2px;
 }
 
 
@@ -93,12 +131,31 @@ header{
     font-size: 20px;
 }
 
+.container_pontuacao{
+    height: 50px;
+    width: 70%;
+
+}
+.container_pontuacao{
+    display: flex;
+    justify-content: space-around;
+}
+.pontuacao{
+    margin-top: 10px;
+    display: flex;
+    width:150px;
+
+}
+.campo_btns{
+    display: flex;
+    margin-left: 35px;
+}
+
 
 
 /* CSS DA TABBELA DE RANK*/
 aside{
-    height:150px;
-    width:60%;
+    width:50%;
     margin-top: 20px;
     background-color: indigo;
     border: 3px solid chartreuse;
@@ -109,8 +166,8 @@ aside{
     
 }
 .titulo_rank{
-    width: 100%;
-    height:150px;
+    font-size: 20px;
+    text-shadow: 1px 1px orangered;
     color:white;
     display: flex;
     justify-content: space-around;
@@ -118,8 +175,10 @@ aside{
 }
 .corpo{
     display: flex;
-    width:100%;
+    width:90%;
+    margin: auto;
 }
+
 
 
 
@@ -193,6 +252,49 @@ table, tr, td{
     transition: all 1s;
     backface-visibility: hidden;
 
+}
+.ranking{
+
+    display: flex;
+    justify-content: space-around;
+}
+.ranking img {
+    margin-top: 20px;
+}
+.linha_verde{
+    height:2px;
+    width: 80%;
+    margin:auto;
+    margin-bottom: 15px;
+    background-color: chartreuse;
+}
+.corpo_ranking{
+    width:80%;
+    margin: auto;
+}
+.corpo_ranking_int{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+}
+.ranking_dificuldade{
+    flex: 1;
+    display: flex;
+    background-color: chartreuse;
+    margin: 5px;
+}
+.ranking_dificuldade_rigth{
+    flex: 2;
+
+}
+.ranking_dificuldade_left{
+    flex: 1;
+
+}
+.lista_tempo{
+    text-decoration: none;
+    list-style: none;
 }
 
 /*Bilioteca*/

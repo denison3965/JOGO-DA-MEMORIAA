@@ -12,19 +12,28 @@
     <div class="container">
         <header>
             <div class="header_right">
-                <div><h1 class="titulo_do_jogo">Jogo da memoria</h1></div>
+                
+                <div class="titulo_do_jogo" onclick="atualizaRanking()">Jogo da memoria</div>
+                    
+                
+                
                 <div class="menu">
                     <form class="flex_box menu_int">
 
                         <div class="flex_box nome">
-                            <div class="legenda_nome" onclick=" reset()">Nome </div>
+                            <div class="legenda_nome" onclick="start()">Nome </div>
                             <input class="campo_nome" type="text" name="nome" placeholder=" Fernando..." id="nome_id">
                         </div>
                     
-                        <div class="btn_jogar" onclick="iniciarJogo()">JOGAR</div> 
+                        <div class="btns">
+                            <div class="btn_jogar" onclick="iniciarJogo()">JOGAR</div> 
+                            
+                            
+                        </div>
+                        
                     
                         <div class="flex_box dificuldade">
-                            <div class="legenda_dificuldade">Dificuldade </div>
+                            <div class="legenda_dificuldade" onclick="stop()">Dificuldade </div>
                             <select name="dificuldade" class="nivel_dificuldade" id="dificuldade_id">
                                 <option value="facil">facil</option>
                                 <option value="medio">medio</option>
@@ -33,6 +42,21 @@
 
                         </div>
                     </form>
+                </div>
+                <div class="container_pontuacao">
+                    <div class="pontuacao">
+                        <div>Pontuacao: </div>
+                        <strong><span id="pontuacao" style="color: indigo;">FWDS</span></strong>
+                    </div>
+                    <div class="campo_btns">
+                        <div class="btn_reset" onclick=" reset()"><img src="assets/img/refrescar.png" width="20px" height="20px" /></div>
+                        <img src="assets/img/palhaco.png" width="50px" height="50px"/>
+                        <div class="btn_intrucao"><img src="assets/img/livro.png" width="20px" height="20px" /></div>
+                    </div>
+                    <div class="pontuacao">
+                        <div>Tempo: </div>
+                        <strong><span id ="tempo" style="color: indigo; width:100px;">1</span></strong>
+                    </div>
                 </div>
             </div>
         </header>
@@ -44,7 +68,7 @@
             
         </div>
         <aside>
-            <div class="flex_box">
+            <div class="ranking">
                 <img src="assets/img/coroa.png" width="50px" height="50px"/>
                 <div class="titulo_rank">
                     RANKING
@@ -52,8 +76,90 @@
                 <img src="assets/img/coroa.png" width="50px" height="50px"/>
             </div>
             
-            <di class="corpo">
+            <di class="corpo_ranking">
+                
+                <div class="linha_verde"></div>
+
+                <div class="corpo_ranking_int">
+                    <div class="ranking_dificuldade">
+                        <div class="ranking_dificuldade_rigth">
+                            <div class="ranking_dificuldade_nome" >
+                                <img src="assets/img/medalha.png" width="30px" height="30px"/>
+                                <span>Dificil</span>
+                            </div>
+                            <div>
+                                <ol>
+                                    <li>Guilherme</li>
+                                    <li>Fernando</li>
+                                    <li>Paula</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="ranking_dificuldade_left">
+                            <img src="assets/img/img3.png" width="25px" height="25px"/>
+                                <span>Tempo</span>
+                                <div>
+                                    <ul class="lista_tempo">
+                                        <li>30:45</li>
+                                        <li>35:23</li>
+                                        <li>37:02</li>
+                                    </ul>
+                                </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ranking_dificuldade">
+                        <div class="ranking_dificuldade_rigth">
+                            <div class="ranking_dificuldade_nome" >
+                                <img src="assets/img/medalha1.png" width="30px" height="30px"/>
+                                <span>Medio</span>
+                            </div>
+                            <div>
+                                <ol>
+                                    <li>Guilherme</li>
+                                    <li>Fernando</li>
+                                    <li>Paula</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="ranking_dificuldade_left">
+                                <img src="assets/img/img3.png" width="25px" height="25px"/>
+                                <span>Tempo</span>
+                                <div>
+                                    <ul class="lista_tempo">
+                                        <li>30:45</li>
+                                        <li>35:23</li>
+                                        <li>37:02</li>
+                                    </ul>
+                                </div>
+                        </div>
+                        
+                    </div>
+                    <div class="ranking_dificuldade">
+                        <div class="ranking_dificuldade_rigth">
+                            <div class="ranking_dificuldade_nome" >
+                                <img src="assets/img/medalha2.png" width="30px" height="30px"/>
+                                <span>Facil</span>
+                            </div>
+                            <div>
+                                <ol id="nome_facil">
+                                
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="ranking_dificuldade_left">
+                            <img src="assets/img/img3.png" width="25px" height="25px"/>
+                                <span>Tempo</span>
+                                <div>
+                                    <ul class="lista_tempo" id="tempo_facil">
+                                        
+                                    </ul>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
                     
+                </div>
             </div>
         </aside>
        

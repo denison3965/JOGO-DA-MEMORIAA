@@ -58,12 +58,20 @@ for (let i = 0; i < 30; i++) {
 //====================================================================================================================
 
 function iniciarJogo() {
+    
+    reset()
+    //iniciando cronometro
+    start()
+
+
     let dificuldade = document.getElementById("dificuldade_id").value;
     let nome = document.getElementById("nome_id").value;
     let numeros_de_cartas = 0;
     let numero_de_linha = 0;
     let numero_de_img = 0;
     let tabuleiro = document.getElementById("tabuleiro_do_jogo");
+
+    
 
     //Setando as variaveis de controle de acordo com o nivel escolhido pelo jogador
     switch (dificuldade) {
@@ -239,10 +247,12 @@ let pontuacao = 0;
 
 
 
+
 function girarCarta(){
 
     //pegando  carta que foi virada e armazenando-a na variavel carta 
     let carta = document.getElementById(event.currentTarget.id);
+    let area_pontuacao = document.getElementById("pontuacao");
 
     let tabuleiro3 = document.getElementById("tabuleiro_do_jogo");
     let pontuacaoParaGanhar = 0;
@@ -297,9 +307,23 @@ function girarCarta(){
     cartasViradas[0].remove()
     cartasViradas[1].remove()
     pontuacao++
+    //imprimindo minha pontuaca na tela
+    area_pontuacao.innerHTML = pontuacao;
 
     if (pontuacao == pontuacaoParaGanhar) {
         alert("Voce ganhou meus parábens")
+        pontuacao = 0;
+        area_pontuacao.innerHTML = pontuacao;
+
+        let nome_jogador = document.getElementById("nome_id").value;
+        let tempo_jogador = String(document.getElementById("tempo").innerHTML)
+        let dificuldade_jogador = document.getElementById("dificuldade_id").value
+
+        let info_jogador = [tempo_jogador, dificuldade_jogador]
+
+        localStorage.setItem(nome_jogador, info_jogador);
+        console.log(tempo_jogador, nome_jogador)
+        reset()
     }
     
     } 
@@ -333,9 +357,12 @@ function girarCarta(){
 //========================================================================================================================
 
 function reset() {
-    //alert("oi");
+
+    stop()
+
+    alert("limpando a tela");
     let tabuleiro2 = document.getElementById("tabuleiro_do_jogo").children;
-    console.log(tabuleiro2);
+    //console.log(tabuleiro2);
     let dificuldade2 = document.getElementById("dificuldade_id").value;
     let numero_de_linha2 = 0;
 
@@ -360,15 +387,19 @@ function reset() {
         default:
             break;
     }
-    console.log(numero_de_linha2.length)
-    if(numero_de_linha2.length != 0 ){
+    console.log(tabuleiro2.length)
+    if(tabuleiro2.length > 0 ){
 
     
-        for (let i = numero_de_linha2 - 1; i < numero_de_linha2; i--) {
+        for (let i = tabuleiro2.length -1 ; i >= 0; i--) {
             tabuleiro2[i].remove();
-            console.log(tabuleiro2);
+            //onsole.log(tabuleiro2[i]);
             
         }
+        let area_pontuacao = document.getElementById("pontuacao");
+        pontuacao = 0;
+        area_pontuacao.innerHTML = pontuacao;
+
     }
 
 
@@ -376,5 +407,101 @@ function reset() {
     // {
     //     tabuleiro2.parentNode.removeChild();
     // }
+}
+
+//Timer
+
+let hh = 0;
+let mm = 0;
+let ss = 0;
+
+let tempo = 1; // 1 segundo em milesimos
+let cron;
+
+function start() {
+    cron = setInterval(() => { timer();}, tempo);
+}
+
+function stop () {
+    clearInterval(cron);
+    hh = 0;
+    mm = 0;
+    ss = 0;
+    document.getElementById("tempo").innerHTML = "00:00:00"
+
+}
+
+function timer () {
+
+    ss++
+    if (ss > 60) {
+        mm++
+        ss = 0
+    }
+    if (mm > 60) {
+        hh++
+        mm = 0
+    }
+    
+    let format = (hh < 10? "0" + hh: hh) + ":" + (mm < 10 ? "0" + mm: mm) + ":" + (ss < 10 ? "0" + ss: ss);
+    document.getElementById("tempo").innerHTML = format;
+}
+
+function atualizaRanking () {
+    let chaves_objeto = Object.keys(localStorage)
+    let newObject = {}
+    //onsole.log(teste)
+    //console.log(localStorage.getItem(teste))
+
+    Object.keys(localStorage).forEach(element => {
+        
+        //pegando a posicao onde colocaremos os nomes e tempo
+        let campo_nome = document.getElementById("nome_facil")
+        let campo_tempo = document.getElementById("nome_tempo")
+
+
+        // transformando o conteudo de umm objeto em array
+        let content = localStorage.getItem(element).split(",")
+        
+        //setando o nome tempo e nivel em variaveis pelo resultado do mmeu local storage
+        let nome_jogador = element;
+        let tempo_jogador = content[0]
+        let nivel = content[1]
+
+        let numeros_tempo = tempo_jogador.split(":");
+
+        //transformando os os mm ss e hh do tempo de string para int para que conseguimos fazer calsulo 
+        for (let i = 0; i < 3; i++) {
+            numeros_tempo[i] = parseInt(numeros_tempo[i]) 
+        }
+
+        //somando mm ss hh, adquirindo um peso para fazer a comparacao de quem a menor ou maior 
+        let soma = 0; 
+        for (let i = 0; i < 3; i++) {
+            soma = soma + numeros_tempo[i];
+            
+        }
+
+       // console.log(numeros_tempo)
+        console.log(soma)
+
+        //console.log(nome_jogador,tempo_jogador, nivel)
+
+        switch (nivel) {
+            case "facil":
+                
+                break;
+
+            case "medio":
+                
+                break;    
+
+            case "dificil":
+                
+                break;
+            default:
+                break;
+        }
+    });
 
 }
