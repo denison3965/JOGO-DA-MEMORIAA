@@ -415,7 +415,7 @@ let hh = 0;
 let mm = 0;
 let ss = 0;
 
-let tempo = 1; // 1 segundo em milesimos
+let tempo = 1000; // 1 segundo em milesimos
 let cron;
 
 function start() {
@@ -504,4 +504,12 @@ function atualizaRanking () {
         }
     });
 
+}
+
+function abrirPopUp() {
+    document.getElementById("popup").style.display = 'block';
+}
+
+function fecharPopUp () {
+    document.getElementById("popup").style.display = 'none';
 }

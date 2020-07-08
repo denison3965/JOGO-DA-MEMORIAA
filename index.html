@@ -9,6 +9,29 @@
     <script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
+    <div class="popup" id="popup">
+        <div class="popup_int">
+            <div class="fechar_popup">
+                <div class="titulo_regras_do_jogo"><strong>Regras do Jogo</strong></div>
+                <div class="btn_fechar_popup" onclick="fecharPopUp()">x</div>
+            </div>
+            <div class="conteudo_popup">
+                <br><br><strong style="color: chartreuse;">1 -</strong> Misturar e distribuir as cartas sobre uma mesa, com os desenhos virados para baixo, clicando em jogar.<br><br>
+    
+                <strong style="color: chartreuse;">2 -</strong> O jogador deve virar duas cartas buscando um par igual.<br><br>
+    
+                <strong style="color: chartreuse;">3 -</strong> Se o jogador consegue encontrar duas cartas iguais à primeira, conta um ponto e as cartas somem.<br><br>
+    
+                <strong style="color: chartreuse;">4 -</strong> No caso do jogador, ao virar duas cartas e que os seus desenhos não coincidam, as cartas sao viradas novamente para sua posicao inicial.<br><br>
+    
+                <strong style="color: chartreuse;">5 -</strong> As cartas que formarem par devem ser retiradas do jogo e conta como ponto para o participante.<br><br>
+    
+                <strong style="color: chartreuse;">6 -</strong> Ganha o jogo o participante que reunir mais pares de cartas.<br><br>
+    
+            </div>
+        </div>
+        
+    </div>
     <div class="container">
         <header>
             <div class="header_right">
@@ -51,7 +74,7 @@
                     <div class="campo_btns">
                         <div class="btn_reset" onclick=" reset()"><img src="assets/img/refrescar.png" width="20px" height="20px" /></div>
                         <img src="assets/img/palhaco.png" width="50px" height="50px"/>
-                        <div class="btn_intrucao"><img src="assets/img/livro.png" width="20px" height="20px" /></div>
+                        <div class="btn_intrucao" onclick="abrirPopUp()"><img src="assets/img/livro.png" width="20px" height="20px" /></div>
                     </div>
                     <div class="pontuacao">
                         <div>Tempo: </div>
